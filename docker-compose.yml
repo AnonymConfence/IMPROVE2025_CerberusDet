@@ -1,0 +1,20 @@
+# sudo docker-compose up -d
+# sudo docker attach anonymnet_repo_anonymnet_1
+version: "3"
+
+services:
+  anonymnet:
+    shm_size: 100G
+    build: .
+    volumes:
+      - "/data:/data"
+      - "/anonymnet_repo:/usr/src/app"
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [ gpu ]

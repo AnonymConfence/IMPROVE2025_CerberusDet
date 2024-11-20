@@ -1,0 +1,12 @@
+
+task_names:
+  - voc
+  - objects365_animals
+
+single_models:
+  - pretrained/yolov8x_VOC.pt
+  - pretrained/yolov8x_obj365_animals.pt
+
+configs:
+  - anonymnet/models/yolov8x.yaml
+  - anonymnet/models/yolov8x.yaml
